@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application Discusion de Resultados</string>
+    <string name="numero1">Digite el primer Numero: </string>
+    <string name="numero2">Digite el segundo Numero: </string>
+    <string name="sumar">Sumar</string>
+    <string name="resultado">Resultado: </string>
+</resources>
