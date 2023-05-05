@@ -1,5 +1,5 @@
-package edu.udb.appcalculadoramvc
-
+package com.example.appcalculadoramvc
+import kotlin.math.sqrt
 class CalculatorModel {
 
     fun add(num1: Double, num2: Double): Double {
@@ -16,5 +16,9 @@ class CalculatorModel {
 
     fun divide(num1: Double, num2: Double): Double {
         return num1 / num2
+    }
+
+    fun square_root(num1: Double):Double{
+        return sqrt(num1)
     }
 }

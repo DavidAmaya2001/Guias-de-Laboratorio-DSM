@@ -3,6 +3,7 @@ package edu.udb.appcalculadoramvc
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.appcalculadoramvc.CalculatorModel
 import com.example.appcalculadoramvc.R
 
 
@@ -16,6 +17,7 @@ class CalculatorController(private val view: MainActivity) {
         view.findViewById<Button>(R.id.btn_subtract).setOnClickListener { performOperation("subtract") }
         view.findViewById<Button>(R.id.btn_multiply).setOnClickListener { performOperation("multiply") }
         view.findViewById<Button>(R.id.btn_divide).setOnClickListener { performOperation("divide") }
+        view.findViewById<Button>(R.id.btn_sqrt).setOnClickListener{ performOperation("square_root")}
     }
 
     private fun performOperation(operation: String) {
@@ -29,6 +31,7 @@ class CalculatorController(private val view: MainActivity) {
             "subtract" -> model.subtract(num1, num2)
             "multiply" -> model.multiply(num1, num2)
             "divide" -> model.divide(num1, num2)
+            "square_root" -> model.square_root(num1)
             else -> throw IllegalArgumentException("Operación no válida")
         }
 
