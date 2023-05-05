@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -18,9 +18,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText" />
-
+        app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -30,9 +28,7 @@
         android:text="Producto"
         app:layout_constraintBottom_toTopOf="@+id/txtNombre"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="HardcodedText" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
     <EditText
         android:id="@+id/txtNombre"
         android:layout_width="319dp"
@@ -43,8 +39,7 @@
         android:singleLine="true"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TextFields" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -55,9 +50,7 @@
         android:text="Precio"
         app:layout_constraintBottom_toTopOf="@+id/txtPrecio"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNombre"
-        tools:ignore="HardcodedText" />
-
+        app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
     <EditText
         android:id="@+id/txtPrecio"
         android:layout_width="319dp"
@@ -67,9 +60,7 @@
         android:inputType="numberDecimal"
         android:singleLine="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -80,9 +71,7 @@
         android:text="Cantidad inicial"
         app:layout_constraintBottom_toTopOf="@+id/txtCantidad"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPrecio"
-        tools:ignore="HardcodedText" />
-
+        app:layout_constraintTop_toBottomOf="@+id/txtPrecio" />
     <EditText
         android:id="@+id/txtCantidad"
         android:layout_width="319dp"
@@ -91,8 +80,7 @@
         android:ems="10"
         android:inputType="numberSigned"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
     <Spinner
         android:id="@+id/cmbCategorias"
         android:layout_width="319dp"
@@ -110,8 +98,7 @@
         android:layout_marginTop="10dp"
         android:text="Categoria"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCantidad"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCantidad" />
     <Button
         android:id="@+id/btnAgregar"
         android:layout_width="match_parent"
@@ -124,8 +111,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnActualizar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cmbCategorias"
-        tools:ignore="HardcodedText,VisualLintButtonSize" />
+        app:layout_constraintTop_toBottomOf="@+id/cmbCategorias" />
     <Button
         android:id="@+id/btnActualizar"
         android:layout_width="match_parent"
@@ -138,8 +124,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnEliminar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAgregar"
-        tools:ignore="HardcodedText,VisualLintButtonSize" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAgregar" />
     <Button
         android:id="@+id/btnEliminar"
         android:layout_width="match_parent"
@@ -150,9 +135,7 @@
         android:text="Eliminar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnActualizar"
-        tools:ignore="HardcodedText,VisualLintButtonSize" />
-
+        app:layout_constraintTop_toBottomOf="@+id/btnActualizar" />
     <Button
         android:id="@+id/btnBuscar"
         android:layout_width="match_parent"
@@ -163,8 +146,7 @@
         android:text="Buscar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEliminar"
-        tools:ignore="HardcodedText,VisualLintButtonSize" />
+        app:layout_constraintTop_toBottomOf="@+id/btnEliminar" />
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
@@ -175,9 +157,7 @@
         android:text="Codigo"
         app:layout_constraintBottom_toTopOf="@+id/txtNombre"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="HardcodedText" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
     <EditText
         android:id="@+id/txtId"
         android:layout_width="122dp"
@@ -189,8 +169,7 @@
         android:inputType="numberSigned"
         app:layout_constraintBottom_toTopOf="@+id/txtNombre"
         app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
     <TextView
         android:id="@+id/txtIdDB"
         android:layout_width="wrap_content"
@@ -200,8 +179,5 @@
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnBuscar" />
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -4,7 +4,6 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import com.example.sqliteapp.db.HelperDB
-
 class Categoria(context: Context?) {
     private var helper: HelperDB? = null
     private var db: SQLiteDatabase? = null
@@ -46,7 +45,7 @@ class Categoria(context: Context?) {
             "Bebidas Carbonatadas",
             "Bebidas no carbonatadas"
         )
-        // Verificacion si existen registros precargados
+// Verificacion si existen registros precargados
         val columns = arrayOf(COL_ID, COL_NOMBRE)
         var cursor: Cursor? =
             db!!.query(TABLE_NAME_CATEGORIA, columns, null, null, null, null, null)
@@ -85,6 +84,3 @@ class Categoria(context: Context?) {
         return cursor!!.getString(1)
     }
 }
-
-
-

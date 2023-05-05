@@ -1,17 +1,19 @@
 package com.example.sqliteapp
 
+import android.annotation.SuppressLint
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sqliteapp.db.HelperDB
 import com.example.sqliteapp.model.Categoria
 import com.example.sqliteapp.model.Productos
+import sv.edu.udb.sqliteapp.R
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-
     private var managerCategoria: Categoria? = null
     private var managerProductos: Productos? = null
     private var dbHelper: HelperDB? = null
@@ -27,7 +29,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private var btnActualizar: Button? = null
     private var btnEliminar: Button? = null
     private var btnBuscar: Button? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -87,7 +88,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     Toast.makeText(this, "Producto agregado",
                         Toast.LENGTH_LONG).show()
                 }
-            } else if (view === btnActualizar)
+            } else if (view === btnActualizar) {
                 if (vericarFormulario("actualizar")) {
                     managerProductos!!.updateProducto(
                         idproducto.toInt(),
@@ -99,19 +100,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     Toast.makeText(this, "Producto actualizado",
                         Toast.LENGTH_LONG).show()
                 }
-        } else if (view === btnEliminar) {
-            if (vericarFormulario("eliminar")) {
-                // manager.eliminar(1);
-                managerProductos!!.deleteProducto(idproducto.toInt())
-                Toast.makeText(this, "Producto eliminado",
-                    Toast.LENGTH_LONG).show()
+            } else if (view === btnEliminar) {
+                if (vericarFormulario("eliminar")) {
+                    // manager.eliminar(1);
+                    managerProductos!!.deleteProducto(idproducto.toInt())
+                    Toast.makeText(this, "Producto eliminado",
+                        Toast.LENGTH_LONG).show()
+                }
+            } else if (view === btnBuscar) {
+                /*IMPLEMENTE LA BUSQUEDA*/
+            } else {
+                Toast.makeText(this, "No se puede conectar a la Base de Datos",
+                    Toast.LENGTH_LONG)
+                    .show()
             }
-        } else if (view === btnBuscar) {
-            /*IMPLEMENTE LA BUSQUEDA*/
-        } else {
-            Toast.makeText(this, "No se puede conectar a la Base de Datos",
-                Toast.LENGTH_LONG)
-                .show()
         }
     }
     private fun vericarFormulario(opc: String): Boolean {
@@ -149,9 +151,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     notificacion = "No se ha seleccionado un producto"
                 }
                 response =
-                    !(nombre_v == false || precio_v == false || cantidad_v == false || idproducto_v == false)
+                    !(nombre_v == false || precio_v == false || cantidad_v == false ||
+                            idproducto_v == false)
             } else {
-                response = !(nombre_v == false || precio_v == false || cantidad_v == false)
+                response = !(nombre_v == false || precio_v == false || cantidad_v ==
+                        false)
             }
         } else if (opc === "eliminar"||opc=="buscar") {
             if (idproducto.isEmpty()) {
@@ -161,12 +165,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
         //Mostrar errores
         if (response == false) {
-            Toast.makeText(this, notificacion, Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                this,
+                notificacion,
+                Toast.LENGTH_LONG
+            ).show()
         }
         return response
     }
 }
-
-
 
 

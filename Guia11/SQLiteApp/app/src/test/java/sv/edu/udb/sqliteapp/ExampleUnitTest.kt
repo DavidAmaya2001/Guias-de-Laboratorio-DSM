@@ -1,4 +1,4 @@
-package com.example.sqliteapp
+package sv.edu.udb.sqliteapp
 
 import org.junit.Test
 
